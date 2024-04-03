@@ -1,0 +1,14 @@
+{
+    "User_info": {
+        "Username": "user123",
+        "Email": "example@gmail.com",
+        "Phone": 0,
+        "Membership": "basic"
+    },
+
+    "Flight_info": {
+        "FlightNumber": "SA123",
+        "Class": "economy",
+        "distance": 1000
+    }
+}
