@@ -5,3 +5,18 @@ class Flight:
         self.destination = destination
         self.departureTime = departureTime
         self.arrivalTime = arrivalTime
+    
+    def getFlightNumber(self):
+        pass
+
+    def getDeparture(self):
+        pass
+
+    def getDestination(self):
+        pass
+
+    def DepartureTime(self):
+        pass
+
+    def getArrivalTime(self):
+        pass
