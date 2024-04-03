@@ -6,8 +6,8 @@ class Membership:
             "BonusMile_25%": False,
             "BonusMile_50%": False,
             "PriorityBoarding":False,
-            "LoungeAccessWithoutHospitality" : False,
-            "LoungeAccessWithHospitality": False,
+            "LA" : False, # LoungeAccessWithoutHospitality
+            "LAWH": False, # # LoungeAccessWithHospitality
         }
 
     def getLevel(self):
@@ -16,8 +16,8 @@ class Membership:
     def setLevel(self, level):
         self.level = level
 
-    def getBenefits(self):
-        return self.benefits
+    def getBenefits(self, benefit):
+        return self.benefits[benefit]
     
     def addBenefits(self, benefit):
         self.benefits[benefit] = True
