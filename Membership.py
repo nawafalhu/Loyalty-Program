@@ -1,7 +1,14 @@
 class Membership:
     def __init__(self, level):
         self.level = level
-        self.benefits = {}
+        self.benefits = {
+            "ExtraBaggage": False,
+            "BonusMile_25%": False,
+            "BonusMile_50%": False,
+            "PriorityBoarding":False,
+            "LoungeAccessWithoutHospitality" : False,
+            "LoungeAccessWithHospitality": False,
+        }
 
     def getLevel(self):
         return self.level
