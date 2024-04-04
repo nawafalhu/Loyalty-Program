@@ -71,14 +71,3 @@ class Passenger:
                 return False
         else:
             return False
-
-    def getFreeTicket(self):
-        inter = 0
-        dom = 0
-        while self.miles >= 9000:
-            if self.miles >= 10000:
-                inter += 1
-            
-            elif self.miles >= 9000 :
-                dom += 1
-        return f"You can get {inter} international flights, and {dom} domestic flight for free!"
