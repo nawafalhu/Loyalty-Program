@@ -20,19 +20,19 @@ class Passenger:
         return self.flight
 
     def setFlight(self, flight):
-        pass
+        self.flight = flight
     
     def getSeatClass(self):
-        pass
+        return self.seatclass
 
     def setSeatClass(self, seatclass):
-        pass
+        self.seatclass = seatclass
 
     def getName(self):
-        pass
+        return self.name
 
     def getId(self):
-        pass
+        return self.id
 
     def getMiles(self):
         return self.miles
