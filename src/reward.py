@@ -21,7 +21,7 @@ class Reward(ABC):
     def addExtraBaggage(self):
         pass
 
-
+# basic level
 class basic(Reward):
     def udgradeSeat(self, miles):
         if miles >= 3000:
@@ -33,18 +33,26 @@ class basic(Reward):
             return True
         return False
 
-
+# silver level
 class silver(Reward):    
-    def udgradeSeat(self):
-        pass
+    def udgradeSeat(self, miles):
+        if miles >= 2500:
+            return True
+        return False
 
-    def addExtraBaggage(self):
-        pass
+    def addExtraBaggage(self, miles):
+        if miles >= 1000:
+            return True
+        return False
 
-
+# gold level
 class gold(Reward):
-    def udgradeSeat(self):
-        pass
+    def udgradeSeat(self, miles):
+        if miles >= 2000:
+            return True
+        return False
 
-    def addExtraBaggage(self):
-        pass
+    def addExtraBaggage(self, miles):
+        if miles >= 500:
+            return True
+        return False
