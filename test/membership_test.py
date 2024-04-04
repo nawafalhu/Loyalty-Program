@@ -1,7 +1,7 @@
 from membership import Membership
 
 
-def test_level_set_get():
+def level_set_get_test():
     membership = Membership('silver')
     assert membership.getLevel() == 'silver'
 
