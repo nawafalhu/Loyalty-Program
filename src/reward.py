@@ -8,7 +8,7 @@ class Reward(ABC):
 # basic level
 class FreeDomesticFlightTicket(Reward):
     def redeem(self, membership):
-        pass
+        member = membership.getRequiredPointsFor("FreeDomestic")
 
 
 # silver level
@@ -21,10 +21,7 @@ class udgradeSeat(Reward):
     def redeem(self, membership):
         pass
 
+class addExtraBaggage(Reward):
+    def redeem(self, membership):
+        pass
 
-
-
-# FreeDomesticFlightTicket
-# FreeInternationalFlightTicket
-# udgradeSeat
-# addExtraBaggage
