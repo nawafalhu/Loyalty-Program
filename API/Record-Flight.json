@@ -1,0 +1,11 @@
+{
+    "Request":{
+        "userid":1122,
+        "flightnumber": "SA1143",
+        "departure": "RUH",
+        "destination": "NYC",
+        "distance": 11100,
+        "departureTime": "1:00PM",
+        "arrivalTime": "2:30AM"
+    }
+}
