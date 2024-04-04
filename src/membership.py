@@ -1,6 +1,7 @@
 class Membership:
-    def __init__(self, level):
+    def __init__(self, level, years):
         self.level = level
+        self.years = years
         self.benefits = {
             "ExtraBaggage": False,
             "BonusMile_25%": False,
@@ -18,6 +19,12 @@ class Membership:
 
     def getBenefits(self, benefit):
         return self.benefits[benefit]
+    
+    def getyears(self):
+        pass
+
+    def upgradeLevel(self, level):
+        pass
     
     def addBenefits(self, benefit):
         self.benefits[benefit] = True
