@@ -21,10 +21,21 @@ class Membership:
         return self.benefits[benefit]
     
     def getyears(self):
-        pass
+        return self.years
 
-    def upgradeLevel(self, level):
-        pass
+    def upgradeLevel(self):
+        if self.level == "basic":
+            self.level = "silver"
+            return True
+
+        elif self.level == "silver":
+            self.level = "gold"
+            return True
+
+        elif self.level == "gold":
+            return False    
+        else :
+            return False
     
     def addBenefits(self, benefit):
         self.benefits[benefit] = True
