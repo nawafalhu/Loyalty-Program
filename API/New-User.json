@@ -1,0 +1,11 @@
+{
+    "Request":{
+        "username":"user123",
+        "email":"nawaf@gmail.com",
+        "password":"Aa123456"
+    },
+    
+    "Response":{
+        "userid":1122
+    }
+}
