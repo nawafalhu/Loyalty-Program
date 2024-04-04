@@ -39,33 +39,33 @@ class Passenger:
 
     def calculateMiles(self):
         membershipLevel = self.membership.getLevel()
-        destination = self.flight.getDestination()
+        distance = self.flight.getDistance()
         seat = self.getSeatClass()
         # Basic membership level
         if membershipLevel == 'basic':
             if seat == 'economy':
-                temp = destination * 0.50
+                temp = distance * 0.50
                 self.miles = temp
             elif seat == 'Business':
-                self.miles = destination
+                self.miles = distance
             else: 
                 return False
         # silver membership level
         elif membershipLevel == 'silver':
             if seat == 'economy':
-                temp = destination * 0.75
+                temp = distance * 0.75
                 self.miles = temp
             elif seat == 'Business':
-                temp = destination * 1.25
+                temp = distance * 1.25
                 self.miles = temp
             else: 
                 return False
         # gold membership level
         elif membershipLevel == 'gold':
             if seat == 'economy':
-                self.miles = destination
+                self.miles = distance
             elif seat == 'Business':
-                temp = destination * 1.50
+                temp = distance * 1.50
                 self.miles = temp
             else: 
                 return False
