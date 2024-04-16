@@ -1,35 +1,49 @@
 from abc import ABC, abstractmethod
+from flight import Flight
 
 class Membership:
-    def __init__(self, level, years):
+    def __init__(self, level, flight:Flight):
         self.level = level
-        self.years = years
-        self.benefits = {
-            "PriorityBoarding":False,
-            "LA" : False, # LoungeAccessWithoutHospitality
-            "LAWH": False, # # LoungeAccessWithHospitality
-        }
-        if self.level == 'silver':
-            self.benefits['LA'] = True
+        self.flight = flight
+        self.miles = 0
+        self.tierMiles = 0
+
+    def calculateTotalMiles(self):
+        distance = self.flight.distance
+        seat = self.flight.seatclass
+ 
+        # Basic membership level
+        if self.level == 'basic':
+            if seat == 'economy':
+                temp = distance * 0.50
+                self.miles = temp
+            elif seat == 'Business':
+                self.miles = distance
+            else: 
+                return False
+            
+        # silver membership level
+        elif self.level == 'silver':
+            if seat == 'economy':
+                temp = distance * 0.75
+                self.miles = temp
+            elif seat == 'Business':
+                temp = distance * 1.25
+                self.miles = temp
+            else: 
+                return False
+            
+        # gold membership level
         elif self.level == 'gold':
-            self.benefits['LAWH'] = True
-            self.benefits['PriorityBoarding'] = True
-
-    def getLevel(self):
-        return self.level
-    
-    def setLevel(self, level):
-        self.level = level
-
-    def getBenefits(self, benefit):
-        return self.benefits[benefit]
-    
-    def getyears(self):
-        return self.years
-
-    def removeBenefits(self, benefit):
-        if benefit in self.benefits.keys():
-            del self.benefits[benefit]
+            if seat == 'economy':
+                self.miles = distance
+            elif seat == 'Business':
+                temp = distance * 1.50
+                self.miles = temp
+            else: 
+                return False
+        else:
+            return False
 
     def getRequiredPointsFor(self, reward):
         # Free Domestic flight
@@ -50,7 +64,7 @@ class Membership:
                 return 3000
         
         # add Extra Baggage
-        elif reward == "addExtraBaggage":
+        elif reward == "addExtraLuggage":
             if self.level == "basic":
                 return 500
             elif self.level == "silver":
@@ -64,24 +78,61 @@ class Reward(ABC):
     def redeem(self, membership):
         pass
 
-# basic level
+# Free Domestic Flight Ticket
 class FreeDomesticFlightTicket(Reward):
-    def redeem(self, membership):
+    def redeem(self, membership:Membership):
         point = membership.getRequiredPointsFor("FreeDomestic")
+        miles = membership.calculateTotalMiles()
+        self.tierMiles += miles
+
+        if miles >= point:
+            miles -= point
+            self.miles = miles
+            return True
+        raise Exception('Not Enough Miles')
+            
 
 
-
-# silver level
+# Free International Flight Ticket
 class FreeInternationalFlightTicket(Reward):
-    def redeem(self, membership):
+    def redeem(self, membership:Membership, flight):
         point = membership.getRequiredPointsFor("FreeInternational")
+        miles = membership.calculateTotalMiles()
+        self.tierMiles += miles
 
-# gold level
+        if miles >= point:
+            miles -= point
+            self.miles = miles
+            return True
+        raise Exception('Not Enough Miles')
+
+# udgrade Seat
 class udgradeSeat(Reward):
-    def redeem(self, membership):
+    def redeem(self, membership:Membership, flight):
         point = membership.getRequiredPointsFor("udgradeSeat")
+        miles = membership.calculateTotalMiles()
+        self.tierMiles += miles
 
-class addExtraBaggage(Reward):
-    def redeem(self, membership):
-        point = membership.getRequiredPointsFor("addExtraBaggage")
+        if miles >= point and flight.seatclass != 'Business':
+            miles -= point
+            self.miles = miles
+
+            flight.seatclass = 'Business'
+            return True
+        raise Exception('Not Enough Miles or You have Business seat already')
+
+# add Extra Baggage
+class addExtraLuggage(Reward):
+    def redeem(self, membership:Membership, flight):
+        point = membership.getRequiredPointsFor("addExtraLuggage")
+        miles = membership.calculateTotalMiles()
+        self.tierMiles += miles
+
+        if miles >= point and flight.addExtraLuggage == False:
+            miles -= point
+            self.miles = miles
+
+            flight.addExtraLuggage = True
+            return True
+        raise Exception('Not Enough Miles or You have Extra Luggage already')
 
