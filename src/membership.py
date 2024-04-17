@@ -16,34 +16,34 @@ class Membership:
         if self.level == 'basic':
             if seat == 'economy':
                 temp = distance * 0.50
-                self.miles = temp
+                return temp
             elif seat == 'Business':
-                self.miles = distance
+                return distance 
             else: 
-                return False
+                return 0
             
         # silver membership level
         elif self.level == 'silver':
             if seat == 'economy':
                 temp = distance * 0.75
-                self.miles = temp
+                return temp
             elif seat == 'Business':
                 temp = distance * 1.25
-                self.miles = temp
+                return temp
             else: 
-                return False
+                return 0
             
         # gold membership level
         elif self.level == 'gold':
             if seat == 'economy':
-                self.miles = distance
+                return distance
             elif seat == 'Business':
                 temp = distance * 1.50
-                self.miles = temp
+                return temp
             else: 
-                return False
+                return 0
         else:
-            return False
+            return 0
 
     def getRequiredPointsFor(self, reward):
         # Free Domestic flight
@@ -83,13 +83,13 @@ class FreeDomesticFlightTicket(Reward):
     def redeem(self, membership:Membership):
         point = membership.getRequiredPointsFor("FreeDomestic")
         miles = membership.calculateTotalMiles()
-        self.tierMiles += miles
+        membership.tierMiles += miles
 
         if miles >= point:
             miles -= point
             self.miles = miles
             return True
-        raise Exception('Not Enough Miles')
+        return 'Not Enough Miles'
             
 
 
@@ -98,20 +98,20 @@ class FreeInternationalFlightTicket(Reward):
     def redeem(self, membership:Membership, flight):
         point = membership.getRequiredPointsFor("FreeInternational")
         miles = membership.calculateTotalMiles()
-        self.tierMiles += miles
+        membership.tierMiles += miles
 
         if miles >= point:
             miles -= point
             self.miles = miles
             return True
-        raise Exception('Not Enough Miles')
+        return 'Not Enough Miles'
 
 # udgrade Seat
 class udgradeSeat(Reward):
     def redeem(self, membership:Membership, flight):
         point = membership.getRequiredPointsFor("udgradeSeat")
         miles = membership.calculateTotalMiles()
-        self.tierMiles += miles
+        membership.tierMiles += miles
 
         if miles >= point and flight.seatclass != 'Business':
             miles -= point
@@ -119,14 +119,14 @@ class udgradeSeat(Reward):
 
             flight.seatclass = 'Business'
             return True
-        raise Exception('Not Enough Miles or You have Business seat already')
+        return 'Not Enough Miles or You have Business seat already'
 
 # add Extra Baggage
 class addExtraLuggage(Reward):
     def redeem(self, membership:Membership, flight):
         point = membership.getRequiredPointsFor("addExtraLuggage")
         miles = membership.calculateTotalMiles()
-        self.tierMiles += miles
+        membership.tierMiles += miles
 
         if miles >= point and flight.addExtraLuggage == False:
             miles -= point
@@ -134,5 +134,5 @@ class addExtraLuggage(Reward):
 
             flight.addExtraLuggage = True
             return True
-        raise Exception('Not Enough Miles or You have Extra Luggage already')
+        return 'Not Enough Miles or You have Extra Luggage already'
 

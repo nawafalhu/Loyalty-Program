@@ -10,36 +10,36 @@ class Booking:
         self.bookings = []
 
     def processOnlineBooking(self):
-        pass
+        return 0
 
-    def addBooking(self, flight, paymentMethod):
-        if paymentMethod == 'online':
-            self.processOnlineBooking(flight)        
-        else:
-            self.processMilesBooking(flight)
-
-    def processMilesBooking(self, flight):
-        if flight.self.type == 'Domestic':
+    def processMilesBooking(self):
+        if self.flight.type == 'Domestic':
             reward = FreeDomesticFlightTicket()
             reward.redeem(self.membership)
-            self.bookings.append(Booking())
+            self.bookings.append(Booking(self.flight, self.membership))
             return "Booking Success"
         
-        elif flight.self.type == 'Internationa':
+        elif self.flight.type == 'International':
             reward = FreeInternationalFlightTicket()
             reward.redeem(self.membership)
-            self.bookings.append(Booking)
+            self.bookings.append(Booking(self.flight, self.membership))
             return "Booking Success"
         
     def addLuggage(self):
         reward = addExtraLuggage()
-        reward.redeem(self.membership)
+        reward.redeem(self.membership, self.flight)
         return "ُExtra Luggage added"
 
     def upgrade(self):
         reward = udgradeSeat()
-        reward.redeem(self.membership)
+        reward.redeem(self.membership, self.flight)
         return "Seat Upgraded"
+    
+    def addBooking(self, paymentMethod):
+        if paymentMethod == 'online':
+            self.processOnlineBooking()        
+        else :
+            self.processMilesBooking()
 
 
 
