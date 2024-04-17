@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from flight import Flight
+from book import Booking 
 
 class Membership:
     def __init__(self, level, flight:Flight):
@@ -11,39 +12,41 @@ class Membership:
     def calculateTotalMiles(self):
         distance = self.flight.distance
         seat = self.flight.seatclass
- 
-        # Basic membership level
-        if self.level == 'basic':
-            if seat == 'economy':
-                temp = distance * 0.50
-                return temp
-            elif seat == 'Business':
-                return distance 
-            else: 
+        Bookings = Booking.bookings
+
+        for booking in Bookings :
+            # Basic membership level
+            if self.level == 'basic':
+                if seat == 'economy':
+                    temp = distance * 0.50
+                    return temp
+                elif seat == 'Business':
+                    return distance 
+                else: 
+                    return 0
+                
+            # silver membership level
+            elif self.level == 'silver':
+                if seat == 'economy':
+                    temp = distance * 0.75
+                    return temp
+                elif seat == 'Business':
+                    temp = distance * 1.25
+                    return temp
+                else: 
+                    return 0
+                
+            # gold membership level
+            elif self.level == 'gold':
+                if seat == 'economy':
+                    return distance
+                elif seat == 'Business':
+                    temp = distance * 1.50
+                    return temp
+                else: 
+                    return 0
+            else:
                 return 0
-            
-        # silver membership level
-        elif self.level == 'silver':
-            if seat == 'economy':
-                temp = distance * 0.75
-                return temp
-            elif seat == 'Business':
-                temp = distance * 1.25
-                return temp
-            else: 
-                return 0
-            
-        # gold membership level
-        elif self.level == 'gold':
-            if seat == 'economy':
-                return distance
-            elif seat == 'Business':
-                temp = distance * 1.50
-                return temp
-            else: 
-                return 0
-        else:
-            return 0
 
     def getRequiredPointsFor(self, reward):
         # Free Domestic flight
