@@ -18,35 +18,26 @@ class Membership:
             # Basic membership level
             if self.level == 'basic':
                 if seat == 'economy':
-                    temp = distance * 0.50
-                    return temp
+                    temp += distance * 0.50
                 elif seat == 'Business':
-                    return distance 
-                else: 
-                    return 0
+                    temp += distance 
                 
             # silver membership level
             elif self.level == 'silver':
                 if seat == 'economy':
-                    temp = distance * 0.75
-                    return temp
+                    temp += distance * 0.75
+                    
                 elif seat == 'Business':
-                    temp = distance * 1.25
-                    return temp
-                else: 
-                    return 0
+                    temp += distance * 1.25
                 
             # gold membership level
             elif self.level == 'gold':
                 if seat == 'economy':
-                    return distance
+                    temp += distance
                 elif seat == 'Business':
-                    temp = distance * 1.50
-                    return temp
-                else: 
-                    return 0
-            else:
-                return 0
+                    temp += distance * 1.50
+        return temp            
+
 
     def getRequiredPointsFor(self, reward):
         # Free Domestic flight
