@@ -4,6 +4,11 @@
 
 The SkyMiles Loyalty Program is designed to enhance customer loyalty by offering a mileage accumulation system that rewards frequent travelers with various benefits. The program is structured around three membership tiers—Basic, Silver, and Gold—each offering progressively greater benefits. These include increased mileage accrual, additional amenities, priority boarding, seat upgrades, lounge access, and exclusive hospitality services.
 
+## Contributer
+- NAWAF ALHOMAIDHI
+- FAHAD ALYAHYA
+- MOHAMMED ALSHARHAN
+
 ## Goals
 
 The primary goals of the SkyMiles Loyalty Program are:
@@ -31,8 +36,3 @@ The primary goals of the SkyMiles Loyalty Program are:
 ![Sequence Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/sequence-Diagram.jpeg)
 ## Activity Diagram
 ![Activity Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Activity-Diagram.jpeg)
-
-## Contributing
-- NAWAF ALHOMAIDHI
-- FAHAD ALYAHYA
-- MOHAMMED ALSHARHAN
