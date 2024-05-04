@@ -23,21 +23,7 @@ The primary goals of the SkyMiles Loyalty Program are:
 
 ### Integration with Partners
 - The system integrates with various trading partners allowing miles to be used as credits for services, enhancing the utility of accrued miles.
-
-## System Requirements
-
-### Functional Requirements
-- **Registration and Profile Creation:** Support for new user registration and profile management.
-- **Mileage Earning and Redemption:** Accurate calculation and crediting of miles based on travel and membership tier.
-- **Membership Benefits:** Differentiated benefits based on membership level, such as additional luggage allowances and mileage bonuses.
-- **Partner Integration:** Seamless integration with partner systems for the redemption of miles for services.
-
-## Documentation
-
-- **Product Requirements Document:** Outlines the complete specifications and requirements for the program.
-- **Use Case Diagrams:** Visual representation of user interactions with the system.
-- **Activity and Sequence Diagrams:** Detailed workflows of system processes.
-- **Class Diagrams:** Architectural overview of system classes and their relationships.
+![Use Case Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Activity-Diagram.jpeg)
 
 ## Contributing
 - NAWAF ALHOMAIDHI
