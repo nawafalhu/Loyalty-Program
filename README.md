@@ -23,7 +23,14 @@ The primary goals of the SkyMiles Loyalty Program are:
 
 ### Integration with Partners
 - The system integrates with various trading partners allowing miles to be used as credits for services, enhancing the utility of accrued miles.
-![Use Case Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Activity-Diagram.jpeg)
+## Design Class Diagram
+![Design Class Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Design-Class-Diagram.png)
+## Use Case Diagram
+![Use Case Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Use-Case-Diagram.jpeg)
+## Sequence Diagram
+![Sequence Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/sequence-Diagram.jpeg)
+## Activity Diagram
+![Activity Diagram](https://github.com/nawafalhu/Loyalty-Program/blob/main/Digrams/Activity-Diagram.jpeg)
 
 ## Contributing
 - NAWAF ALHOMAIDHI
