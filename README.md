@@ -4,7 +4,7 @@
 
 The SkyMiles Loyalty Program is designed to enhance customer loyalty by offering a mileage accumulation system that rewards frequent travelers with various benefits. The program is structured around three membership tiers—Basic, Silver, and Gold—each offering progressively greater benefits. These include increased mileage accrual, additional amenities, priority boarding, seat upgrades, lounge access, and exclusive hospitality services.
 
-## Contributer
+## Contributors
 - NAWAF ALHOMAIDHI
 - FAHAD ALYAHYA
 - MOHAMMED ALSHARHAN
