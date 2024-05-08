@@ -1,10 +1,27 @@
 {
-    "userid":1122,
-    "flightnumber": "SA1143",
-    "departure": "RUH",
-    "destination": "NYC",
-    "distance": 11100,
-    "departureTime": "1:00PM",
-    "arrivalTime": "2:30AM",
-    "class":"economy"
-}
+    "flightNumber": "DL123",
+    "departureAirport": "JFK",
+    "arrivalAirport": "LAX",
+    "flightDateTime": "2024-05-20T15:45:30Z",
+    "passengers": [
+      {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "class": "Economy",
+        "price": 450.00,
+        "currency": "USD",
+        "age": 29,
+        "userid":"1222"
+      },
+      {
+        "firstName": "John",
+        "lastName": "Doe",
+        "class": "Economy",
+        "price": 450.00,
+        "currency": "USD",
+        "age": 34,
+        "userid":"1222"
+      }
+    ]
+  }
+  

@@ -1,5 +1,14 @@
 {
-    "userid":1122,
-    "email":"nawaf@gmail.com",
-    "mails":8345
+    "Request":{
+        "userid":1122,
+        "email":"nawaf@gmail.com",
+        "Phone":"1234567890",
+        "partnershipLevel":"Basic",
+        "mails":8345
+    },
+    
+    "Response":{
+        "userid":1122,
+        "mails":3345
+    }
 }
