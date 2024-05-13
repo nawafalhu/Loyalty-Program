@@ -8,6 +8,9 @@ The SkyMiles Loyalty Program is designed to enhance customer loyalty by offering
 - NAWAF ALHOMAIDHI
 - FAHAD ALYAHYA
 - MOHAMMED ALSHARHAN
+- Saud alsalem
+- Abdulaziz alsaed
+- Mohammed alqahtany 
 
 ## Goals
 
